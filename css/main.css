@@ -1,0 +1,413 @@
+:root {
+  --letter: 5;
+  --Dev-letter: 8;
+  --Des-letter: 7;
+  --color: rgb(0, 120, 255);
+  --color2: rgba(0, 120, 255, 0.8);
+}
+body {
+  scroll-behavior: smooth;
+}
+/* start navbar */
+.navbar {
+  z-index: 999;
+  padding: 18px 0;
+  &.bg-mynav {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  & .navbar-brand {
+    font-size: 30px;
+    font-weight: 500;
+  }
+  & .navbar-nav {
+    padding: 5px 40px;
+  }
+  & .nav-item {
+    padding: 0px 5px !important;
+  }
+
+  & .nav-item a {
+    font-size: 17px;
+    font-weight: 600;
+  }
+}
+/* End navbar */
+/* *********************************************************** */
+/* start header */
+.home {
+  background-image: url("../image/hero-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100vh;
+
+  & .homeLayer {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  & h1 {
+    font-size: 50px;
+  }
+
+  & span::after {
+    content: "";
+    position: absolute;
+    width: 3px;
+    height: 100%;
+    background-color: rgb(254, 254, 254);
+    top: 0;
+    right: 0;
+  }
+  & span {
+    font-size: 30px;
+    width: 0px;
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    font-family: "Roboto Mono", monospace;
+  }
+}
+span:nth-child(1) {
+  animation: developer 5s infinite steps(var(--Dev-letter));
+}
+span:nth-child(2) {
+  animation: designer 5s infinite steps(var(--Des-letter));
+}
+@keyframes developer {
+  0%,
+  50% {
+    width: 0px;
+  }
+  25% {
+    width: calc(var(--Dev-letter) * 24px);
+  }
+}
+@keyframes designer {
+  0%,
+  50%,
+  100% {
+    width: 0px;
+  }
+  75% {
+    width: calc(var(--Des-letter) * 24px);
+  }
+}
+/* End header */
+/* *********************************************************** */
+/* start About */
+.About {
+  background-color: rgb(245, 245, 245);
+  & .container {
+    background-color: white;
+  }
+  & h5 {
+    position: relative;
+  }
+  & h5::after {
+    content: "";
+    position: absolute;
+    width: 90px;
+    height: 2px;
+    background-color: var(--color);
+    bottom: -15px;
+    left: 0;
+  }
+  & p {
+    font-size: 1.25rem;
+    font-weight: 300;
+  }
+}
+/* End About */
+/* ******************************************************** */
+/* start SERVICES */
+.SERVICES {
+  background-color: rgb(245, 245, 245);
+  & .title h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  & .line {
+    width: 40px;
+    height: 6px;
+    background-color: var(--color);
+    margin: 0 auto;
+  }
+  & .card {
+    padding: 2.5rem 1.3rem;
+    border-radius: 1rem;
+    box-shadow: 0 13px 8px -10px rgba(0, 0, 0, 0.1);
+  }
+  & .car-icon {
+    width: 125px;
+    height: 125px;
+    border: 10px solid var(--color);
+    transition: all 0.5s;
+  }
+  & i {
+    font-size: 37px;
+  }
+  & .services-item :hover .car-icon {
+    color: white;
+    background-color: var(--color);
+    border: 11px solid rgba(255, 255, 255, 0.8);
+  }
+}
+/* End SERVICES */
+/* ******************************************************* */
+/* start PORTFOLIO */
+.PORTFOLIO {
+  background-color: rgb(245, 245, 245);
+  & .title h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  & .line {
+    width: 40px;
+    height: 6px;
+    background-color: var(--color);
+    margin: 0 auto;
+  }
+  & .card {
+    border: 0;
+    box-shadow: 0 13px 8px -10px rgba(0, 0, 0, 0.1);
+    margin-top: 3rem;
+  }
+  & .card-body {
+    padding: 1.8rem 1rem;
+  }
+  & i {
+    font-size: 2.5rem;
+    color: var(--color);
+  }
+  & h5 {
+    font-size: 1.2rem;
+    color: #1e1e1e;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+  & p {
+    font-size: 0.8rem;
+    color: #4e4e4e;
+  }
+  & .card-img {
+    overflow: hidden;
+    cursor: grab;
+  }
+  & .PORTFOLIO-item img {
+    transition: all 0.7s;
+  }
+  & .PORTFOLIO-item :hover img {
+    transform: scale(1.23, 1.23);
+  }
+}
+/* End PORTFOLIO */
+/* ************************************************** */
+/* start BLOG */
+.BLOG {
+  background-color: rgb(245, 245, 245);
+  padding-bottom: 7rem !important;
+  & .title h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  & .line {
+    width: 40px;
+    height: 6px;
+    background-color: var(--color);
+    margin: 0 auto;
+  }
+  & .card {
+    box-shadow: 0 13px 8px -10px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.175);
+    position: relative;
+  }
+  & .card::after {
+    content: "TRAVEL";
+    position: absolute;
+    width: 4.3rem;
+    height: 30px;
+    background-color: var(--color);
+    padding: 2px;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    color: white;
+    transform: translate(-50%, 80%);
+  }
+  & .card-body {
+    padding: 20px;
+  }
+  & .card-text {
+    line-height: 23px;
+  }
+  & .card-title {
+    text-decoration: none;
+    font-weight: 600;
+  }
+  & .footer {
+    background-color: rgba(248, 248, 248, 0.8);
+    border-top: 1px solid rgba(0, 0, 0, 0.175);
+    padding: 7px 0;
+  }
+  & .footer-img img {
+    width: 12%;
+    border-radius: 50%;
+  }
+  .footer-img a {
+    text-decoration: none;
+    color: #000;
+    transition: all 0.5s;
+  }
+  .footer-img a:hover {
+    color: var(--color);
+  }
+}
+/* End BLOG */
+/* *********************************************** */
+/* start counter */
+.counter {
+  background-image: url("../image/counters-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 60vh;
+  position: relative;
+
+  & .counter-layer {
+    background-color: var(--color);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.7;
+  }
+
+  & .counter-icon {
+    width: 85px;
+    height: 85px;
+    border: 10px solid rgba(255, 255, 255, 0.8);
+  }
+  & .counter-icon i {
+    font-size: 25px;
+    color: white;
+  }
+  & .container {
+    top: 20%;
+  }
+}
+/* ************************************************ */
+/* Start carouse */
+.carouse {
+  background-image: url("../image/overlay-bg.jpg");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  & .layerOfCarouse {
+    background-color: rgba(0, 120, 255, 0.7);
+  }
+  & .container {
+    margin: 50px auto;
+  }
+  & .carousel-indicators {
+    top: 100%;
+  }
+  & .carousel-indicators [data-bs-target] {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+}
+/* End carouse */
+/* start contact */
+.contact {
+  background-image: url("../image/overlay-bg.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+
+  & .contact-layer {
+    background-color: rgba(0, 120, 255, 0.7);
+    padding-top: 70px;
+    padding-bottom: 30px;
+    overflow: hidden;
+  }
+  & .container {
+    margin-top: 50px;
+    margin-bottom: 20px;
+  }
+  & .title {
+    padding-bottom: 40px;
+  }
+  & .title .line {
+    width: 100px;
+    height: 3px;
+    background-color: var(--color);
+  }
+  & .info {
+    & .icons {
+      margin-top: 20px;
+    }
+  }
+  & .socials {
+    width: 45px;
+    height: 45px;
+    background-color: white;
+    transition: all 0.5s;
+    border: 4px solid var(--color);
+    & i {
+      font-size: 20px;
+    }
+  }
+  & .icons {
+    transition: all 0.5s;
+  }
+  & .icons :hover {
+    color: white;
+  }
+  & .socials:hover {
+    background-color: var(--color);
+    border: 3px solid rgba(255, 255, 255, 0.8);
+  }
+
+  & .info-details {
+    & .icon i {
+      color: var(--color);
+    }
+  }
+  & button {
+    padding: 10px 24px;
+    font-size: 1.2rem;
+    border-radius: 5rem;
+  }
+  & .btn {
+    transition: all 0.5s;
+  }
+  & .btn:hover {
+    box-shadow: 0 0 0 4px #f8decd;
+    background-color: rgba(0, 120, 255, 0.8);
+  }
+}
+/* End  contact */
+/* ************************************************ */
+/* start footer */
+.footer {
+  background-color: rgb(0, 98, 211);
+  & .footer-contain {
+    line-height: 10px;
+  }
+  & .caption {
+    color: rgb(255, 255, 255);
+    font-weight: 700;
+    font-size: 17px;
+  }
+}
